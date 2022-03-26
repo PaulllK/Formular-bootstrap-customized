@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <title>Datele introduse</title>
+</head>
+<body>
+    <h1 class="display-1 text-center text-white bg-dark">Datele introduse</h1>
+    <table class="table table-striped my-auto display-4">      
+        <tbody id="tbody"> 
+          <tr>
+            <th scope="row">Nume</th>
+            <td id="nume"></td>
+          </tr>
+          <tr>
+            <th scope="row">Prenume</th>
+            <td id="prenume"></td>
+          </tr>
+          <tr>
+            <th scope="row">Username</th>
+            <td id="username"></td>
+          </tr>
+          <tr>
+            <th scope="row">Adresa</th>
+            <td id="adresa1"></td>
+          </tr>
+          <tr>
+            <th scope="row">Țara</th>
+            <td id="tara"></td>
+          </tr>
+          <tr>
+            <th scope="row">Oraș</th>
+            <td id="oras"></td>
+          </tr>
+          <tr>
+            <th scope="row">Cod Poștal</th>
+            <td id="cod_postal"></td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+<script>
+  if( localStorage.hasOwnProperty('submitted') ){
+
+   function getInformation(data){
+    document.getElementById(data).innerHTML = window.localStorage.getItem(data);
+   }
+
+   let date = ['nume' , 'prenume' , 'username' , 'adresa1' , 'tara' , 'oras' , 'cod_postal'];
+
+   for(sectiune of date)getInformation(sectiune);
+
+   //pt email si adresa 2 care sunt optionale
+   let indexAdresa2 = 4; //randul la care trebuie introdusa adresa 2 (daca exista) se schimba in fct de faptul daca un rand este ocupat de email sau nu
+   if( window.localStorage.hasOwnProperty('email') ){
+     indexAdresa2 = 5;
+     let row = document.getElementById('tbody').insertRow(3);
+     row.innerHTML = '<th scope="row">Email</th><td>' +  window.localStorage.getItem('email') + '</td>';         
+   }
+
+   if( window.localStorage.hasOwnProperty('adresa2') ){
+     let row = document.getElementById('tbody').insertRow(indexAdresa2);
+     row.innerHTML = '<th scope="row">Adresa 2</th><td>' +  window.localStorage.getItem('adresa2') + '</td>';         
+   }
+
+  }
+</script>
+</html>

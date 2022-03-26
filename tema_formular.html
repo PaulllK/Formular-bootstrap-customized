@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://getbootstrap.com/docs/4.4/examples/checkout/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Formular pt shipping</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/checkout/">
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="https://getbootstrap.com/docs/4.4/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <script src="jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" defer></script>
+    <script defer>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous" defer></script>
+    <!-- adaugat pt tema: -->
+    <script src="val_form.js" defer></script>
+   
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="logo.png" alt="" width="72" height="72">
+    <h2>Formular de checkout</h2>
+    <p class="lead">Completează formularul cu datele neccesare pt trimiterea pachetului cadou cu tematica filmului ales.</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Adresă de billing</h4>
+      <form action="Lista_date_formular.html" class="main-form" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Nume</label>
+            <input type="text" class="form-control" id="firstName" required>
+            <div class="invalid-feedback">
+              Numele trebuie sa conțină numai litere, maxim 30.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Prenume</label>
+            <input type="text" class="form-control" id="lastName" required>
+            <div class="invalid-feedback">
+              Prenumele trebuie sa conțină numai litere, maxim 30.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="username" placeholder="Username" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+              Username-ul trebuie sa conțină doar litere și numere, maxim 20 de caractere.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Opțional)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Email-ul nu este valid.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Adresa</label>
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+          <div class="invalid-feedback">
+            Adresa trebuie introdusa pentru comenzi.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Adresa 2 <span class="text-muted">(Opțional)</span></label>
+          <input type="text" class="form-control" id="address2" placeholder="Apartament sau altele">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Țara</label>
+            <select class="custom-select d-block w-100" id="country" required="">
+              <option>Alege...</option> 
+              <option>Regatul Unit</option>
+              <option>România</option>
+              <option>Germania</option>
+            </select>
+            <div class="invalid-feedback">
+              Alege te rog țara.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">Oraș</label>
+            <select class="custom-select d-block w-100" id="orase" required="">
+              <option>Alege...</option>
+            </select>
+            <div class="invalid-feedback">
+              Alege te rog un oraș.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Cod poștal</label>
+            <input type="text" class="form-control" id="zip" placeholder="" required="">
+            <div class="invalid-feedback">
+              Este necesar un cod poștal.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="same-address">
+          <label class="custom-control-label" for="same-address">Adresa de billing este aceeași cu cea de shipping.</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="save-info">
+          <label class="custom-control-label" for="save-info">Salvează informația pentru data viitoare.</label>
+        </div>        
+        <hr class="mb-4">       
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Înregistrează</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">© 2017-2020 Best Movies</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="https://getbootstrap.com/docs/4.4/examples/checkout/#">Privacy</a></li>
+      <li class="list-inline-item"><a href="https://getbootstrap.com/docs/4.4/examples/checkout/#">Terms</a></li>
+      <li class="list-inline-item"><a href="https://getbootstrap.com/docs/4.4/examples/checkout/#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+        
+
+</body></html>
